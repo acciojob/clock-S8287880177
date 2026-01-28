@@ -1,34 +1,11 @@
-//your JS code here. If required.
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Clock Timer</title>
-</head>
-<body>
+function updateTimer() {
+    const now = new Date();  
+    document.getElementById("timer").textContent = now.toLocaleString();
+}
 
-  <!-- Timer Display -->
-  <p id="timer"></p>
+// Run once when page loads
+updateTimer();
 
-  <script>
-    function updateTimer() {
-      const now = new Date(); // current system date & time
+// Update every second
+setInterval(updateTimer, 1000);
 
-      // Format date
-      const date = now.toLocaleDateString();
-
-      // Format time
-      const time = now.toLocaleTimeString();
-
-      // Show in the <p id="timer">
-      document.getElementById("timer").textContent = `${date} ${time}`;
-    }
-
-    // Run immediately when page loads
-    updateTimer();
-
-    // Update every 1 second (1000 ms)
-    setInterval(updateTimer, 1000);
-  </script>
-
-</body>
-</html>
